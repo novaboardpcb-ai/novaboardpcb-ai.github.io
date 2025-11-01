@@ -20,55 +20,61 @@
         header {
             background: linear-gradient(135deg, #dea24b, #857b6f);
             color: white;
-            padding: 50px 20px;
+            padding: 30px 20px; /* Reducido para móviles */
             box-shadow: 0 4px 8px rgba(0,0,0,0.2);
         }
         header h1 {
             margin: 0;
-            font-size: 2.5rem;
+            font-size: 2rem; /* Responsivo */
             display: flex;
             align-items: center;
             justify-content: center;
-            gap: 20px;
+            gap: 15px; /* Ajustado */
+            flex-wrap: wrap; /* Para móviles */
         }
         header h1 img {
-            width: 80px;
-            height: 80px;
+            width: 60px; /* Reducido para móviles */
+            height: 60px; /* Reducido para móviles */
             object-fit: contain;
             filter: brightness(0) invert(1);
+        }
+        header p {
+            font-size: 1rem; /* Responsivo */
+            margin-top: 10px;
         }
         main {
             flex: 1;
             display: flex;
             justify-content: center;
             align-items: center;
-            padding: 30px 20px;
+            padding: 20px; /* Reducido para móviles */
         }
         .container {
             background: white;
             max-width: 400px;
             width: 100%;
             border-radius: 15px;
-            padding: 30px;
+            padding: 20px; /* Reducido para móviles */
             box-shadow: 0 6px 20px rgba(0,0,0,0.15);
         }
         h2 {
             color: #857b6f;
-            margin-bottom: 25px;
+            margin-bottom: 20px; /* Ajustado */
             font-weight: 700;
             border-bottom: 3px solid #dea24b;
             padding-bottom: 10px;
+            font-size: 1.5rem; /* Responsivo */
         }
         a.btn {
             display: block;
             background: linear-gradient(135deg, #dea24b, #857b6f);
             color: white;
             font-weight: 700;
-            padding: 15px 0;
-            margin: 15px auto;
+            padding: 12px 0; /* Reducido para móviles */
+            margin: 12px auto; /* Ajustado */
             border-radius: 10px;
             text-decoration: none;
-            font-size: 1.2rem;
+            font-size: 1rem; /* Responsivo */
             box-shadow: 0 4px 8px rgba(0,0,0,0.15);
             transition: background 0.3s ease, transform 0.3s ease;
             width: 80%;
@@ -79,20 +85,80 @@
             transform: scale(1.05);
         }
         a.btn i {
-            margin-right: 12px;
+            margin-right: 10px; /* Ajustado */
         }
         footer {
             background: #857b6f;
             color: white;
-            padding: 20px;
-            font-size: 0.9rem;
+            padding: 15px; /* Reducido para móviles */
+            font-size: 0.8rem; /* Responsivo */
+        }
+        /* Media queries para responsividad */
+        @media (max-width: 768px) {
+            header {
+                padding: 20px 15px;
+            }
+            header h1 {
+                font-size: 1.5rem;
+                gap: 10px;
+            }
+            header h1 img {
+                width: 50px;
+                height: 50px;
+            }
+            header p {
+                font-size: 0.9rem;
+            }
+            main {
+                padding: 15px;
+            }
+            .container {
+                padding: 15px;
+            }
+            h2 {
+                font-size: 1.2rem;
+            }
+            a.btn {
+                font-size: 0.9rem;
+                padding: 10px 0;
+                margin: 10px auto;
+            }
+        }
+        @media (max-width: 480px) {
+            header h1 {
+                font-size: 1.2rem;
+                flex-direction: column;
+                gap: 5px;
+            }
+            header h1 img {
+                width: 40px;
+                height: 40px;
+            }
+            header p {
+                font-size: 0.8rem;
+            }
+            .container {
+                padding: 10px;
+            }
+            h2 {
+                font-size: 1rem;
+            }
+            a.btn {
+                font-size: 0.8rem;
+                width: 90%;
+            }
+            footer {
+                font-size: 0.7rem;
+            }
         }
     </style>
 </head>
 <body>
     <header>
-       <h1><img src="logo.png" alt="logo de la empresa" width="500" height="250"></h1>
-        <h1>NOVABOARD</h1>
+        <h1>
+            <img src="logo.png" alt="logo de la empresa">
+            NOVABOARD
+        </h1>
         <p>Especialistas en Creación y Armado de Placas de Circuito Impreso y Circuitos Electrónicos</p>
     </header>
     <main>
@@ -107,7 +173,7 @@
         </div>
     </main>
     <footer>
-        &copy; 2023 NOVABOARD. Todos los derechos reservados.
+        &copy; 2025 NOVABOARD. Todos los derechos reservados. <!-- Actualicé el año para consistencia con el original -->
     </footer>
 </body>
 </html>
