@@ -167,7 +167,7 @@
             <a href="https://wa.link/0j3cil" target="_blank" rel="noopener noreferrer" class="btn" aria-label="Cotización por WhatsApp">
                 <i class="fab fa-whatsapp"></i> Cotización por WhatsApp
             </a>
-            <a href="https://mail.google.com/mail/?view=cm&fs=1&to=novaboardpcb@gmail.com" target="_blank" rel="noopener noreferrer" class="btn" aria-label="Cotización por correo electrónico">
+            <a href="#" id="email-btn" class="btn" aria-label="Cotización por correo electrónico">
                 <i class="fas fa-envelope"></i> Cotización por Correo Electrónico
             </a>
         </div>
@@ -175,5 +175,35 @@
     <footer>
         &copy; 2025 NOVABOARD. Todos los derechos reservados.
     </footer>
+    <script>
+        // Función para detectar si es un dispositivo móvil
+        function isMobile() {
+            return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+        }
+
+        // Función para intentar abrir la app de Gmail en móvil, con fallback
+        function openEmail() {
+            if (isMobile()) {
+                // Intentar abrir la app de Gmail
+                window.location.href = 'googlegmail://co?to=novaboardpcb@gmail.com';
+                // Fallback a mailto si no se abre en 1 segundo
+                setTimeout(function() {
+                    window.location.href = 'mailto:novaboardpcb@gmail.com';
+                }, 1000);
+            } else {
+                // En PC, abrir en navegador web
+                window.open('https://mail.google.com/mail/?view=cm&fs=1&to=novaboardpcb@gmail.com', '_blank');
+            }
+        }
+
+        // Asignar la función al botón
+        document.addEventListener('DOMContentLoaded', function() {
+            const emailBtn = document.getElementById('email-btn');
+            emailBtn.addEventListener('click', function(e) {
+                e.preventDefault();
+                openEmail();
+            });
+        });
+    </script>
 </body>
 </html>
