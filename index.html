@@ -6,38 +6,223 @@
     <title>NOVABOARD</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"> <!-- Para iconos -->
     <style>
-        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; margin: 0; padding: 0; background: linear-gradient(135deg, #f5f7fa 0%, #857b6f 100%); color: #333; line-height: 1.6; }
-        header { background: linear-gradient(135deg, #eec07c, #ccb9b9); color: white; text-align: center; padding: 50px 20px; box-shadow: 0 4px 8px rgba(0,0,0,0.2); }
-        header h1 { margin: 0; font-size: 2.5em; }
-        header p { font-size: 1.2em; margin-top: 10px; }
-        nav { position: sticky; top: 0; background: #857b6f; color: white; padding: 15px; text-align: center; z-index: 100; }
-        nav a { color: white; margin: 0 20px; text-decoration: none; font-weight: bold; transition: color 0.3s; }
-        nav a:hover { color: #dea24b; }
-        section { padding: 40px 20px; max-width: 1000px; margin: 0 auto; background: white; margin-bottom: 20px; border-radius: 10px; box-shadow: 0 4px 12px rgba(0,0,0,0.1); border-left: 5px solid #dea24b; }
-        h2 { color: #857b6f; border-bottom: 3px solid #dea24b; padding-bottom: 10px; display: flex; align-items: center; }
-        h2 i { margin-right: 10px; }
-        ul { list-style: none; padding: 0; }
-        ul li { padding: 10px 0; border-bottom: 1px solid #eee; display: flex; align-items: center; }
-        ul li i { margin-right: 10px; color: #dea24b; }
-        .btn { background: linear-gradient(135deg, #dea24b, #857b6f); color: white; padding: 12px 25px; border: none; border-radius: 5px; cursor: pointer; text-decoration: none; display: inline-block; transition: transform 0.3s; font-weight: bold; }
-        .btn:hover { transform: scale(1.05); background: linear-gradient(135deg, #857b6f, #dea24b); }
-        .cta { text-align: center; margin: 20px 0; }
-        form { background: #f9f9f9; padding: 20px; border-radius: 10px; border: 1px solid #857b6f; }
-        input, textarea { width: 100%; padding: 12px; margin: 10px 0; border: 1px solid #857b6f; border-radius: 5px; box-sizing: border-box; }
-        button { background: linear-gradient(135deg, #dea24b, #857b6f); color: white; padding: 12px; border: none; border-radius: 5px; cursor: pointer; width: 100%; font-size: 1em; }
-        button:hover { background: linear-gradient(135deg, #857b6f, #dea24b); }
-        footer { background: #857b6f; color: white; text-align: center; padding: 20px; }
-        .image-placeholder { width: 100%; height: 200px; background: #f5f7fa; display: flex; align-items: center; justify-content: center; border-radius: 10px; margin: 20px 0; color: #857b6f; border: 2px dashed #dea24b; }
-        @media (max-width: 768px) { nav a { display: block; margin: 10px 0; } section { padding: 20px 10px; } }
+        body { 
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
+            margin: 0; 
+            padding: 0; 
+            background: linear-gradient(135deg, #f5f7fa 0%, #857b6f 100%); 
+            color: #333; 
+            line-height: 1.6; 
+        }
+        header { 
+            background: linear-gradient(135deg, #eec07c, #ccb9b9); 
+            color: white; 
+            text-align: center; 
+            padding: 20px; /* Reducido para móviles */
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2); 
+        }
+        header h1 { 
+            margin: 0; 
+            font-size: 2em; /* Responsivo */
+        }
+        header p { 
+            font-size: 1em; /* Responsivo */
+            margin-top: 10px; 
+        }
+        header img { 
+            max-width: 100%; 
+            height: auto; 
+            margin-bottom: 10px; 
+        }
+        nav { 
+            position: sticky; 
+            top: 0; 
+            background: #857b6f; 
+            color: white; 
+            padding: 10px; 
+            text-align: center; 
+            z-index: 100; 
+            display: flex; 
+            flex-wrap: wrap; 
+            justify-content: center; 
+        }
+        nav a { 
+            color: white; 
+            margin: 5px 10px; 
+            text-decoration: none; 
+            font-weight: bold; 
+            transition: color 0.3s; 
+            display: inline-block; 
+        }
+        nav a:hover { 
+            color: #dea24b; 
+        }
+        section { 
+            padding: 20px; 
+            max-width: 1000px; 
+            margin: 0 auto; 
+            background: white; 
+            margin-bottom: 20px; 
+            border-radius: 10px; 
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1); 
+            border-left: 5px solid #dea24b; 
+        }
+        h2 { 
+            color: #857b6f; 
+            border-bottom: 3px solid #dea24b; 
+            padding-bottom: 10px; 
+            display: flex; 
+            align-items: center; 
+            font-size: 1.5em; /* Responsivo */
+        }
+        h2 i { 
+            margin-right: 10px; 
+        }
+        h3 { 
+            font-size: 1.2em; /* Responsivo */
+        }
+        ul { 
+            list-style: none; 
+            padding: 0; 
+        }
+        ul li { 
+            padding: 10px 0; 
+            border-bottom: 1px solid #eee; 
+            display: flex; 
+            align-items: flex-start; 
+        }
+        ul li i { 
+            margin-right: 10px; 
+            color: #dea24b; 
+            flex-shrink: 0; 
+        }
+        .btn { 
+            background: linear-gradient(135deg, #dea24b, #857b6f); 
+            color: white; 
+            padding: 12px 25px; 
+            border: none; 
+            border-radius: 5px; 
+            cursor: pointer; 
+            text-decoration: none; 
+            display: inline-block; 
+            transition: transform 0.3s; 
+            font-weight: bold; 
+            font-size: 1em; 
+        }
+        .btn:hover { 
+            transform: scale(1.05); 
+            background: linear-gradient(135deg, #857b6f, #dea24b); 
+        }
+        .cta { 
+            text-align: center; 
+            margin: 20px 0; 
+        }
+        form { 
+            background: #f9f9f9; 
+            padding: 20px; 
+            border-radius: 10px; 
+            border: 1px solid #857b6f; 
+        }
+        input, textarea { 
+            width: 100%; 
+            padding: 12px; 
+            margin: 10px 0; 
+            border: 1px solid #857b6f; 
+            border-radius: 5px; 
+            box-sizing: border-box; 
+        }
+        button { 
+            background: linear-gradient(135deg, #dea24b, #857b6f); 
+            color: white; 
+            padding: 12px; 
+            border: none; 
+            border-radius: 5px; 
+            cursor: pointer; 
+            width: 100%; 
+            font-size: 1em; 
+        }
+        button:hover { 
+            background: linear-gradient(135deg, #857b6f, #dea24b); 
+        }
+        footer { 
+            background: #857b6f; 
+            color: white; 
+            text-align: center; 
+            padding: 20px; 
+        }
+        .image-placeholder { 
+            width: 100%; 
+            height: auto; 
+            min-height: 200px; 
+            background: #f5f7fa; 
+            display: flex; 
+            align-items: center; 
+            justify-content: center; 
+            border-radius: 10px; 
+            margin: 20px 0; 
+            color: #857b6f; 
+            border: 2px dashed #dea24b; 
+        }
+        .image-placeholder img { 
+            max-width: 100%; 
+            height: auto; 
+        }
+        /* Media queries para responsividad */
+        @media (max-width: 768px) { 
+            nav { 
+                flex-direction: column; 
+            }
+            nav a { 
+                margin: 5px 0; 
+            }
+            section { 
+                padding: 15px; 
+            }
+            header { 
+                padding: 15px; 
+            }
+            header h1 { 
+                font-size: 1.5em; 
+            }
+            header p { 
+                font-size: 0.9em; 
+            }
+            h2 { 
+                font-size: 1.2em; 
+            }
+            h3 { 
+                font-size: 1em; 
+            }
+            ul li { 
+                flex-direction: column; 
+                align-items: flex-start; 
+            }
+            ul li i { 
+                margin-bottom: 5px; 
+            }
+        }
+        @media (max-width: 480px) { 
+            header h1 { 
+                font-size: 1.2em; 
+            }
+            header p { 
+                font-size: 0.8em; 
+            }
+            h2 { 
+                font-size: 1em; 
+            }
+            .btn { 
+                padding: 10px 20px; 
+                font-size: 0.9em; 
+            }
+        }
     </style>
 </head>
 <body>
     <header>
-       <h1><img src="logo.png" alt="logo de la empresa" width="500" height="250"></h1>
+        <img src="logo.png" alt="logo de la empresa"> <!-- Cambié a ruta relativa, asume que logo.png está en la misma carpeta -->
         <h1>NOVABOARD</h1>
         <p>Especialistas en Creación y Armado de Placas de Circuito Impreso y Circuitos Electrónicos</p>
-
-        
         <p>ESTA PAGINA SOLO ES DE PRUEBA NO HAY NINGUNA EMPRESA DE NOVABOARD EN SANTA ANA SOLO ESTA HECHO COMO UNA IDEA DE EMPRESA</p>
     </header>
     
@@ -53,9 +238,9 @@
         <h2><i class="fas fa-building"></i> Acerca de NOVABOARD</h2>
         <p>En NOVABOARD, somos líderes en la fabricación y armado de placas de circuito impreso (PCB) y circuitos electrónicos personalizados. Con años de experiencia, ofrecemos soluciones de alta calidad para proyectos industriales, prototipos y producción en serie. Nuestro compromiso es proporcionar información completa y servicios confiables para que tus ideas cobren vida.</p>
         <p>¿Por qué elegirnos? Tecnología de vanguardia, tiempos de entrega rápidos y soporte técnico experto.</p>
-        <header3 style="text-align: center;">
-         <h1><img src="logo.png" alt="logo de la empresa" width="500" height="250"></h1>
-        </header3>
+        <div class="image-placeholder"> <!-- Cambié <header3> por <div> para validez HTML -->
+            <img src="logo.png" alt="logo de la empresa"> <!-- Ruta relativa -->
+        </div>
     </section>
 
     <section id="vision-mision">
@@ -70,7 +255,6 @@
             <li><i class="fas fa-globe"></i> Contribución al desarrollo sostenible de la industria electrónica en Santa Ana.</li>
         </ul>
     </section>
-
 
     <section id="procesos">
         <h2><i class="fas fa-list-check"></i> Procesos y Guías Técnicas</h2>
@@ -91,10 +275,9 @@
             <li><i class="fas fa-shield-alt"></i> Garantía: 1 año en nuestros servicios.</li>
         </ul>
 
-          <header3 style="text-align: center;">
-            <h1><img src="concepto-isometrico-placa-circuito_1284-15916.png" alt="placapcb" width="500" height="250"></h1>
-          </header3>
-        
+        <div class="image-placeholder">
+            <img src="concepto-isometrico-placa-circuito_1284-15916.png" alt="placapcb">
+        </div>
     </section>
     
     <section id="servicios">
@@ -108,12 +291,9 @@
             <li><i class="fas fa-shipping-fast"></i> <strong>Servicios Adicionales</strong>: Ensamblaje completo, empaquetado y envío global. Precios competitivos desde $5 por placa, con opciones para lotes grandes.</li>
         </ul>
         <div class="cta">
-         <a href="cotizacion.html" class="btn">Solicita una Cotización</a>
-      </div>
+            <a href="cotizacion.html" class="btn">Solicita una Cotización</a>
         </div>
     </section>
-    
-
     
     <section id="contacto">
         <div class="cta" style="margin-top: 20px;">
